@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NGS India Market & Affordable Panel Planning Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --gold: #f59e0b;
+    --gold-light: #fcd34d;
+    --cream: #fefce8;
+    --slate: #f1f5f9;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, #0f2540 50%, #0d3d33 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,148,136,0.25) 0%, transparent 70%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(13,148,136,0.2);
+    border: 1px solid var(--teal);
+    color: var(--teal-light);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 span { color: var(--gold-light); }
+  .hero-sub {
+    color: #94a3b8;
+    font-size: 15px;
+    max-width: 600px;
+    margin: 0 auto 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .stat-pill {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 14px 22px;
+    text-align: center;
+  }
+  .stat-pill .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold-light);
+    display: block;
+  }
+  .stat-pill .lbl {
+    font-size: 11px;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    background: var(--white);
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--teal);
+  }
+  .section-icon {
+    width: 36px; height: 36px;
+    background: var(--teal);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--navy);
+  }
+  .section-header .tag {
+    margin-left: auto;
+    font-size: 11px;
+    background: var(--cream);
+    border: 1px solid var(--gold);
+    color: #92400e;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+
+  section { margin-bottom: 48px; }
+
+  /* ── MARKET OVERVIEW GRID ── */
+  .market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .market-card {
+    background: linear-gradient(135deg, #0a1628, #0f2540);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: var(--white);
+  }
+  .market-card .mc-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold-light);
+  }
+  .market-card .mc-label {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 4px;
+  }
+  .market-card .mc-trend {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #6ee7b7;
+    background: rgba(16,185,129,0.12);
+    padding: 2px 10px;
+    border-radius: 8px;
+  }
+
+  /* ── DEMAND TABLE ── */
+  .demand-grid {
+    display: grid;
+    gap: 12px;
+  }
+  .demand-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 140px;
+    align-items: center;
+    background: var(--slate);
+    border-radius: 10px;
+    padding: 14px 18px;
+    gap: 12px;
+  }
+  .demand-row.header {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .demand-label { font-weight: 600; font-size: 14px; color: var(--text); }
+  .demand-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .priority-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .p-high { background: #dcfce7; color: #166534; }
+  .p-medium { background: #fef3c7; color: #92400e; }
+  .p-emerging { background: #ede9fe; color: #5b21b6; }
+  .bar-wrap { display: flex; align-items: center; gap: 8px; }
+  .bar {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--teal);
+    transition: width 0.4s ease;
+  }
+  .bar.gold { background: var(--gold); }
+  .bar.purple { background: #8b5cf6; }
+  .bar-pct { font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+  /* ── PANEL PRICING TABLE ── */
+  .pricing-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+  }
+  .pricing-table thead tr {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .pricing-table thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .pricing-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .pricing-table tbody tr:hover { background: #f0fdfa; }
+  .pricing-table tbody tr:last-child { border-bottom: none; }
+  .pricing-table tbody td {
+    padding: 13px 16px;
+    vertical-align: top;
+  }
+  .pricing-table tbody tr:nth-child(even) td { background: #f8fafc; }
+  .pricing-table tbody tr:nth-child(even):hover td { background: #f0fdfa; }
+  .panel-name { font-weight: 600; color: var(--navy); }
+  .panel-genes { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .price-range {
+    font-weight: 700;
+    color: var(--teal);
+    white-space: nowrap;
+  }
+  .price-rec {
+    font-weight: 700;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .rec-chip {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+  .rc-yes { background: #dcfce7; color: #166534; }
+  .rc-maybe { background: #fef3c7; color: #92400e; }
+  .rc-premium { background: #ede9fe; color: #5b21b6; }
+
+  /* ── AFFORDABLE STRATEGY ── */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .strategy-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .strategy-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+  }
+  .sc-teal::before { background: var(--teal); }
+  .sc-gold::before { background: var(--gold); }
+  .sc-purple::before { background: #8b5cf6; }
+  .sc-red::before { background: #ef4444; }
+  .strategy-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .strategy-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .strategy-card ul {
+    margin-top: 8px;
+    padding-left: 16px;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .strategy-card ul li { margin-bottom: 4px; }
+
+  /* ── COMPETITOR TABLE ── */
+  .comp-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+  }
+  .comp-table thead tr { background: var(--navy); color: var(--white); }
+  .comp-table thead th { padding: 12px 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-align: left; }
+  .comp-table tbody tr { border-bottom: 1px solid var(--border); }
+  .comp-table tbody td { padding: 11px 14px; vertical-align: middle; }
+  .comp-table tbody tr:nth-child(even) td { background: #f8fafc; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .dot-green { background: #22c55e; }
+  .dot-yellow { background: #f59e0b; }
+  .dot-red { background: #ef4444; }
+
+  /* ── FOOTER NOTE ── */
+  .footer-note {
+    background: var(--cream);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #78350f;
+    margin-top: 10px;
+  }
+  .footer-note strong { color: #92400e; }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: linear-gradient(135deg, #0f2540, #0d3d33);
+    border-radius: 12px;
+    padding: 24px 28px;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .callout h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold-light); margin-bottom: 10px; }
+  .callout p { font-size: 13px; color: #cbd5e1; line-height: 1.7; }
+  .callout ul { font-size: 13px; color: #cbd5e1; padding-left: 18px; margin-top: 8px; }
+  .callout ul li { margin-bottom: 5px; }
+
+  @media (max-width: 640px) {
+    .demand-row { grid-template-columns: 1fr; }
+    .hero-stats { gap: 14px; }
+    .stat-pill .num { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🇮🇳 India NGS Strategic Intelligence Report</div>
+  <h1>Next-Gen Sequencing <span>Lab Panel Planning</span><br>for India — 2025–2026</h1>
+  <p class="hero-sub">Market demand analysis, popular panels, competitive pricing benchmarks, and affordable setup strategy for Indian NGS labs</p>
+  <div class="hero-stats">
+    <div class="stat-pill">
+      <span class="num">₹2,034 Cr</span>
+      <span class="lbl">India NGS Market 2025</span>
+    </div>
+    <div class="stat-pill">
+      <span class="num">24.4%</span>
+      <span class="lbl">CAGR (2025–2030)</span>
+    </div>
+    <div class="stat-pill">
+      <span class="num">₹7,496 Cr</span>
+      <span class="lbl">Projected by 2030</span>
+    </div>
+    <div class="stat-pill">
+      <span class="num">#1</span>
+      <span class="lbl">Fastest Growing in APAC</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- MARKET OVERVIEW -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <h2>India NGS Market Overview</h2>
+      <span class="tag">2025 Data</span>
+    </div>
+    <div class="market-grid">
+      <div class="market-card">
+        <div class="mc-num">$244M</div>
+        <div class="mc-label">NGS Services Revenue (2024)</div>
+        <span class="mc-trend">▲ +24.4% CAGR</span>
+      </div>
+      <div class="market-card">
+        <div class="mc-num">38.2%</div>
+        <div class="mc-label">Human Genome Services Share</div>
+        <span class="mc-trend">Largest Segment</span>
+      </div>
+      <div class="market-card">
+        <div class="mc-num">1.46M</div>
+        <div class="mc-label">Cancer Cases/Year (India)</div>
+        <span class="mc-trend">↑ Oncology NGS Demand</span>
+      </div>
+      <div class="market-card">
+        <div class="mc-num">$899M</div>
+        <div class="mc-label">Services Market Target 2030</div>
+        <span class="mc-trend">3.5x Growth</span>
+      </div>
+    </div>
+    <div class="callout">
+      <h3>🔑 Key Insight for Lab Setup</h3>
+      <p>India's NGS market is among the fastest-growing globally, driven by a massive cancer burden, rising awareness of rare diseases, consanguinity-linked genetic disorders, and strong government backing through the Genome India Project and Precision Medicine Mission. The demand is shifting from research to <strong>routine clinical diagnostics</strong> — making now the ideal time to launch affordable clinical NGS panels.</p>
+      <ul>
+        <li>Major NGS hubs: Bengaluru, Hyderabad, Chennai, Mumbai, Delhi, Pune</li>
+        <li>Over 200 genomic research centres already operating in India</li>
+        <li>60% drop in NGS costs over the last 5 years — enabling affordable panels</li>
+        <li>India Government allocated ~$120 million toward precision medicine initiatives</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MOST DEMANDED NGS SERVICES -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🔬</div>
+      <h2>Most Demanded NGS Services in India</h2>
+      <span class="tag">Clinical + Research</span>
+    </div>
+
+    <div class="demand-grid">
+      <div class="demand-row header">
+        <div>Panel / Service Type</div>
+        <div>Priority</div>
+        <div>Demand Level</div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">🎗️ Oncology NGS (Solid Tumour Panels)</div>
+          <div class="demand-sub">NSCLC, CRC, Breast, Ovarian — EGFR, KRAS, BRAF, ALK, ROS1, PD-L1</div>
+        </div>
+        <div><span class="priority-badge p-high">★ HIGH</span></div>
+        <div class="bar-wrap"><div class="bar" style="width:95%"></div><span class="bar-pct">95%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">🤰 NIPT (Non-Invasive Prenatal Testing)</div>
+          <div class="demand-sub">Chromosomal aneuploidies — T21, T18, T13, Sex chromosomes, Microdeletions</div>
+        </div>
+        <div><span class="priority-badge p-high">★ HIGH</span></div>
+        <div class="bar-wrap"><div class="bar" style="width:90%"></div><span class="bar-pct">90%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">🧬 Whole Exome Sequencing (WES)</div>
+          <div class="demand-sub">Rare genetic disorders, undiagnosed diseases, intellectual disability</div>
+        </div>
+        <div><span class="priority-badge p-high">★ HIGH</span></div>
+        <div class="bar-wrap"><div class="bar" style="width:85%"></div><span class="bar-pct">85%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">👨‍👩‍👧 Hereditary Cancer Panels (BRCA / Multi-gene)</div>
+          <div class="demand-sub">BRCA1/2, ATM, CHEK2, PALB2, Lynch syndrome genes — germline</div>
+        </div>
+        <div><span class="priority-badge p-high">★ HIGH</span></div>
+        <div class="bar-wrap"><div class="bar" style="width:82%"></div><span class="bar-pct">82%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">👶 Carrier Screening (Expanded)</div>
+          <div class="demand-sub">SMA, DMD, Thalassemia, hearing loss, metabolic disorders — India-specific variants</div>
+        </div>
+        <div><span class="priority-badge p-high">★ HIGH</span></div>
+        <div class="bar-wrap"><div class="bar" style="width:80%"></div><span class="bar-pct">80%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">💊 Pharmacogenomics (PGx) Panels</div>
+          <div class="demand-sub">CYP2D6, CYP2C19, CYP3A5, DPYD, TPMT — drug metabolism profiling</div>
+        </div>
+        <div><span class="priority-badge p-medium">◆ MEDIUM</span></div>
+        <div class="bar-wrap"><div class="bar gold" style="width:65%"></div><span class="bar-pct">65%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">🦠 Infectious Disease / Pathogen NGS</div>
+          <div class="demand-sub">TB-AMR (drug-resistant TB), COVID-19 variants, metagenomics NPS/CSF</div>
+        </div>
+        <div><span class="priority-badge p-medium">◆ MEDIUM</span></div>
+        <div class="bar-wrap"><div class="bar gold" style="width:70%"></div><span class="bar-pct">70%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">🩸 Haematological Malignancy Panels</div>
+          <div class="demand-sub">AML, MDS, lymphoma — FLT3, IDH1/2, NPM1, JAK2, TP53</div>
+        </div>
+        <div><span class="priority-badge p-medium">◆ MEDIUM</span></div>
+        <div class="bar-wrap"><div class="bar gold" style="width:68%"></div><span class="bar-pct">68%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">🏥 Cardiac / Cardiomyopathy Panels</div>
+          <div class="demand-sub">HCM, DCM, ARVC, Channelopathies — MYH7, MYBPC3, SCN5A</div>
+        </div>
+        <div><span class="priority-badge p-medium">◆ MEDIUM</span></div>
+        <div class="bar-wrap"><div class="bar gold" style="width:55%"></div><span class="bar-pct">55%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">🌱 Liquid Biopsy (ctDNA)</div>
+          <div class="demand-sub">Circulating tumour DNA for treatment monitoring and MRD</div>
+        </div>
+        <div><span class="priority-badge p-emerging">◎ EMERGING</span></div>
+        <div class="bar-wrap"><div class="bar purple" style="width:42%"></div><span class="bar-pct">42%</span></div>
+      </div>
+
+      <div class="demand-row">
+        <div>
+          <div class="demand-label">🧠 Neurology / Epilepsy Panels</div>
+          <div class="demand-sub">Epilepsy, autism, intellectual disability — KCNQ2, SCN1A, MECP2</div>
+        </div>
+        <div><span class="priority-badge p-emerging">◎ EMERGING</span></div>
+        <div class="bar-wrap"><div class="bar purple" style="width:38%"></div><span class="bar-pct">38%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING BENCHMARKS -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">💰</div>
+      <h2>NGS Panel Pricing in India — Market Benchmarks</h2>
+      <span class="tag">2025 Pricing</span>
+    </div>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Panel / Test</th>
+          <th>Genes / Scope</th>
+          <th>Market Range (₹)</th>
+          <th>Recommended Affordable Price (₹)</th>
+          <th>Turnaround</th>
+          <th>Launch Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="panel-name">Lung Cancer Basic Panel</div><div class="panel-genes">NSCLC — EGFR, ALK, ROS1, BRAF, MET</div></td>
+          <td>5–8 genes</td>
+          <td class="price-range">₹28,000 – ₹56,000</td>
+          <td class="price-rec">₹18,000 – ₹22,000</td>
+          <td>7–10 days</td>
+          <td><span class="rec-chip rc-yes">✔ Launch First</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Cancer 50-Gene Panel</div><div class="panel-genes">Solid tumors, multi-cancer profiling</div></td>
+          <td>50 genes</td>
+          <td class="price-range">₹35,000 – ₹40,000</td>
+          <td class="price-rec">₹22,000 – ₹28,000</td>
+          <td>10–14 days</td>
+          <td><span class="rec-chip rc-yes">✔ Launch First</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Comprehensive Cancer Panel</div><div class="panel-genes">Broad somatic + germline</div></td>
+          <td>100–190 genes</td>
+          <td class="price-range">₹20,000 – ₹50,000</td>
+          <td class="price-rec">₹18,000 – ₹24,000</td>
+          <td>14–21 days</td>
+          <td><span class="rec-chip rc-yes">✔ Launch First</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Hereditary Cancer Panel</div><div class="panel-genes">BRCA1/2 + multi-gene germline</div></td>
+          <td>25–154 genes</td>
+          <td class="price-range">₹18,000 – ₹36,000</td>
+          <td class="price-rec">₹12,000 – ₹18,000</td>
+          <td>14–28 days</td>
+          <td><span class="rec-chip rc-yes">✔ Launch First</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">NIPT (Basic — Trisomies)</div><div class="panel-genes">T21, T18, T13 — cfDNA</div></td>
+          <td>Chromosomal</td>
+          <td class="price-range">₹8,000 – ₹18,000</td>
+          <td class="price-rec">₹7,000 – ₹10,000</td>
+          <td>7–10 days</td>
+          <td><span class="rec-chip rc-yes">✔ Launch First</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">NIPT (Advanced — Microdeletions)</div><div class="panel-genes">T21/18/13 + sex chrom + microdeletions</div></td>
+          <td>Chromosomal+</td>
+          <td class="price-range">₹15,000 – ₹28,000</td>
+          <td class="price-rec">₹12,000 – ₹16,000</td>
+          <td>10–14 days</td>
+          <td><span class="rec-chip rc-yes">✔ Launch First</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Whole Exome Sequencing (WES)</div><div class="panel-genes">~20,000 protein-coding genes</div></td>
+          <td>Full exome</td>
+          <td class="price-range">₹24,000 – ₹60,000</td>
+          <td class="price-rec">₹18,000 – ₹25,000</td>
+          <td>21–35 days</td>
+          <td><span class="rec-chip rc-yes">✔ Launch First</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Expanded Carrier Screening</div><div class="panel-genes">Thalassemia, SMA, DMD, hearing loss +</div></td>
+          <td>200–2000 genes</td>
+          <td class="price-range">₹12,000 – ₹30,000</td>
+          <td class="price-rec">₹8,000 – ₹14,000</td>
+          <td>14–28 days</td>
+          <td><span class="rec-chip rc-yes">✔ Launch First</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Pharmacogenomics (PGx)</div><div class="panel-genes">CYP enzymes, VKORC1, HLA typing</div></td>
+          <td>15–40 genes</td>
+          <td class="price-range">₹8,000 – ₹22,000</td>
+          <td class="price-rec">₹6,000 – ₹10,000</td>
+          <td>7–14 days</td>
+          <td><span class="rec-chip rc-maybe">⊕ Phase 2</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Haematology Malignancy Panel</div><div class="panel-genes">AML/MDS/lymphoma — FLT3, IDH, JAK2</div></td>
+          <td>20–80 genes</td>
+          <td class="price-range">₹22,000 – ₹45,000</td>
+          <td class="price-rec">₹16,000 – ₹22,000</td>
+          <td>10–14 days</td>
+          <td><span class="rec-chip rc-maybe">⊕ Phase 2</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Cardiac / Inherited Heart Disease</div><div class="panel-genes">HCM, DCM, ARVC, Channelopathies</div></td>
+          <td>50–100 genes</td>
+          <td class="price-range">₹20,000 – ₹45,000</td>
+          <td class="price-rec">₹14,000 – ₹20,000</td>
+          <td>14–21 days</td>
+          <td><span class="rec-chip rc-maybe">⊕ Phase 2</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">TB Drug Resistance (DR-TB NGS)</div><div class="panel-genes">WHO-endorsed targeted NGS</div></td>
+          <td>Mycobacterium</td>
+          <td class="price-range">₹5,000 – ₹15,000</td>
+          <td class="price-rec">₹4,000 – ₹7,000</td>
+          <td>5–7 days</td>
+          <td><span class="rec-chip rc-maybe">⊕ Phase 2</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Whole Genome Sequencing (WGS)</div><div class="panel-genes">Full genome 30x coverage</div></td>
+          <td>Full genome</td>
+          <td class="price-range">₹60,000 – ₹1,20,000</td>
+          <td class="price-rec">₹45,000 – ₹60,000</td>
+          <td>28–45 days</td>
+          <td><span class="rec-chip rc-premium">◈ Premium</span></td>
+        </tr>
+        <tr>
+          <td><div class="panel-name">Liquid Biopsy / ctDNA Panel</div><div class="panel-genes">Circulating tumour DNA — cfDNA</div></td>
+          <td>50–500 genes</td>
+          <td class="price-range">₹40,000 – ₹1,00,000</td>
+          <td class="price-rec">₹28,000 – ₹40,000</td>
+          <td>10–14 days</td>
+          <td><span class="rec-chip rc-premium">◈ Premium</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer-note" style="margin-top:14px;">
+      <strong>Note:</strong> "Recommended Affordable Price" is the suggested competitive launch price for a new Indian lab. This is achievable with in-house Illumina NextSeq/MiSeq or MGI platform, local bioinformatics pipelines, and batch processing. Prices include sequencing + basic bioinformatics report. Genetic counselling may be offered as an add-on (₹500–₹1,500 extra).
+    </div>
+  </section>
+
+  <!-- AFFORDABLE LAB STRATEGY -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🏗️</div>
+      <h2>Affordable NGS Lab Setup Strategy for India</h2>
+      <span class="tag">Cost Optimization</span>
+    </div>
+    <div class="strategy-grid">
+      <div class="strategy-card sc-teal">
+        <h3>1. Platform Selection</h3>
+        <p>Choose cost-efficient sequencing platforms suited to throughput needs:</p>
+        <ul>
+          <li><strong>Illumina MiSeq</strong> — targeted panels, amplicon (low volume)</li>
+          <li><strong>Illumina NextSeq 550/2000</strong> — mid-throughput, WES, WGS</li>
+          <li><strong>MGI DNBSEQ-G400</strong> — 30–40% cheaper reagents vs Illumina</li>
+          <li><strong>Oxford Nanopore MinION</strong> — portable, TB/infection, low cost</li>
+        </ul>
+      </div>
+      <div class="strategy-card sc-gold">
+        <h3>2. Start with High-Volume Panels</h3>
+        <p>Launch with panels that generate recurring, high-frequency orders:</p>
+        <ul>
+          <li>NIPT (Basic + Advanced) — continuous prenatal demand</li>
+          <li>Lung cancer EGFR/ALK/ROS1 panel — NSCLC is most common</li>
+          <li>BRCA1/2 hereditary panel — risk assessment demand</li>
+          <li>Thalassemia + SMA carrier screening — high in South India</li>
+        </ul>
+      </div>
+      <div class="strategy-card sc-purple">
+        <h3>3. Bioinformatics & Reporting</h3>
+        <p>Invest in local bioinformatics pipelines to reduce per-report costs:</p>
+        <ul>
+          <li>Use open-source pipelines: GATK, BWA, FreeBayes, VarScan</li>
+          <li>Build Indian population variant database (IndiGenomics)</li>
+          <li>Integrate ClinVar, COSMIC, OncoKB for clinical interpretation</li>
+          <li>Semi-automated report generation (reduces TAT + cost by 40%)</li>
+        </ul>
+      </div>
+      <div class="strategy-card sc-red">
+        <h3>4. Cost Reduction Levers</h3>
+        <p>Key operational strategies to price competitively:</p>
+        <ul>
+          <li>Batch 8–24 samples per run to minimize per-sample reagent cost</li>
+          <li>Use custom capture panels instead of commercial kits (save 30–50%)</li>
+          <li>Partner with hospitals for direct sample flow (no middleman margins)</li>
+          <li>Leverage NABL accreditation for insurance billing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITOR LANDSCAPE -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🏢</div>
+      <h2>Key NGS Service Providers in India</h2>
+      <span class="tag">Competitive Landscape</span>
+    </div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Lab / Company</th>
+          <th>Strengths</th>
+          <th>Key Panels Offered</th>
+          <th>Price Level</th>
+          <th>Accreditation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>MedGenome</strong></td>
+          <td>South Asia's largest CAP-accredited genomics lab; India-specific databases</td>
+          <td>WES, NIPT, Carrier Screening (Claria), Oncology, HLA</td>
+          <td><span class="dot dot-yellow"></span>Mid–High</td>
+          <td>CAP, NABL</td>
+        </tr>
+        <tr>
+          <td><strong>Metropolis Healthcare</strong></td>
+          <td>Pan-India reach, 4000+ tests, strong oncology portfolio</td>
+          <td>Lung NGS, WES, Haematology panels</td>
+          <td><span class="dot dot-yellow"></span>Mid</td>
+          <td>NABL, ISO</td>
+        </tr>
+        <tr>
+          <td><strong>Redcliffe Labs</strong></td>
+          <td>Affordable pricing, home collection, 2000+ centres</td>
+          <td>Lung Cancer Basic NGS, WES, NIPT</td>
+          <td><span class="dot dot-green"></span>Affordable</td>
+          <td>NABL</td>
+        </tr>
+        <tr>
+          <td><strong>DNA Labs India</strong></td>
+          <td>Broad genetic test menu, low-cost WES (₹24k)</td>
+          <td>WES, Hereditary Cancer (154g), Carrier Screening</td>
+          <td><span class="dot dot-green"></span>Affordable</td>
+          <td>NABL</td>
+        </tr>
+        <tr>
+          <td><strong>Eurofins Genomics India</strong></td>
+          <td>Research-grade sequencing, Illumina NovaSeq/PacBio</td>
+          <td>WGS, Metagenomics, RNA-Seq, Amplicon, ChIP-Seq</td>
+          <td><span class="dot dot-red"></span>High</td>
+          <td>ISO 9001, NABL</td>
+        </tr>
+        <tr>
+          <td><strong>Genes2Me</strong></td>
+          <td>Clinical exome sequencing at competitive rates</td>
+          <td>Clinical WES (8500 genes), Extended WES (19K genes)</td>
+          <td><span class="dot dot-green"></span>Affordable</td>
+          <td>NABL</td>
+        </tr>
+        <tr>
+          <td><strong>CSIR-CCMB Hyderabad</strong></td>
+          <td>Academic/government facility; NovaSeq + Nanopore + MGI + 10X</td>
+          <td>WGS, WES, Metagenomics, Single-cell, Transcriptomics</td>
+          <td><span class="dot dot-green"></span>Subsidised</td>
+          <td>Govt. / DSIR</td>
+        </tr>
+        <tr>
+          <td><strong>Ganesh Diagnostics (GDIC)</strong></td>
+          <td>NABL/NABH accredited, affordable oncology panels</td>
+          <td>Cancer 50-Gene, Comprehensive Tumour 170-Gene</td>
+          <td><span class="dot dot-green"></span>Affordable</td>
+          <td>NABL, NABH</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🚀</div>
+      <h2>Recommended Affordable Launch Panel Portfolio</h2>
+      <span class="tag">Action Plan</span>
+    </div>
+    <div class="callout">
+      <h3>Phase 1 — Launch Panels (Months 1–6)</h3>
+      <p>Start with the highest-volume, highest-demand clinical panels where your pricing can undercut the market by 20–30% while remaining profitable:</p>
+      <ul>
+        <li>🫁 <strong>Lung Cancer Basic NGS</strong> — Target ₹18,000–₹22,000 (market avg: ₹32,000)</li>
+        <li>🤰 <strong>NIPT Basic</strong> (T21/T18/T13) — Target ₹7,000–₹9,000 (market avg: ₹12,000+)</li>
+        <li>🧬 <strong>Hereditary Breast/Ovarian (BRCA1/2 + 25 genes)</strong> — Target ₹12,000–₹15,000</li>
+        <li>👶 <strong>Thalassemia + SMA + Hearing Loss Carrier Screening</strong> — Target ₹8,000–₹12,000</li>
+        <li>🔬 <strong>WES (Clinical Exome)</strong> — Target ₹18,000–₹22,000 (market avg: ₹24,000–₹60,000)</li>
+      </ul>
+    </div>
+    <div class="callout" style="margin-top:16px;">
+      <h3>Phase 2 — Expand (Months 7–18)</h3>
+      <ul>
+        <li>🩸 Haematological Malignancy NGS (AML/MDS panel) — ₹16,000–₹22,000</li>
+        <li>💊 Pharmacogenomics (PGx) Panel — ₹6,000–₹10,000</li>
+        <li>🫀 Cardiac Inherited Disease Panel — ₹14,000–₹20,000</li>
+        <li>🦠 DR-TB Targeted NGS — ₹4,000–₹7,000</li>
+        <li>🌱 Advanced NIPT with Microdeletions — ₹12,000–₹16,000</li>
+      </ul>
+    </div>
+    <div class="footer-note" style="margin-top:16px;">
+      <strong>💡 Competitive Advantage Tips:</strong> Obtain NABL accreditation early for insurance reimbursement eligibility. Build India-specific variant interpretation (especially for South Indian population variants). Offer free genetic counselling to drive referrals. Focus on Tier-2 cities (Coimbatore, Madurai, Vijayawada, Indore, Nagpur) where NGS access is very limited and demand is growing. Partner with oncology centres, fertility clinics, and paediatric hospitals for consistent sample flow.
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+</body>
+</html>
